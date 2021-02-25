@@ -75,9 +75,7 @@ export default class Landing extends Component{
         .then(res => {
             if(!res.ok) {
                 throw new Error(res.status)
-            } else {
-                alert('Creation successful. Please go to login.')
-            }
+            } 
         })
         .then(
             this.setState({
