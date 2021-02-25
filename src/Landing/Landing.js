@@ -60,7 +60,7 @@ export default class Landing extends Component{
     }
 
     handleSubmitNewUser(e){
-        
+        e.preventDefault()
          fetch('https://movie-ouija.herokuapp.com/user/create', {
              method: 'POST',
              headers: {
@@ -85,6 +85,7 @@ export default class Landing extends Component{
             })
             
         )
+        .then(() => this.props.history.push('/login'))
         .catch(err => {
             alert(err + ' Creation failed. Does the user already exist?')
         })
