@@ -66,10 +66,11 @@ class Login extends Component{
         .then(resJson => 
            TokenService.saveAuthToken(resJson))
         .then(
-            this.setState({
+           () => this.setState({
                 loggedIn: !this.state.loggedIn
             })
-        )       
+        )
+        .then(() => this.props.history.push('/home'))    
         .catch(err => {
             alert(err + ' Login failed')
         })   
