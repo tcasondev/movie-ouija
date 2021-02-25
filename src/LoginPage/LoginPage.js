@@ -66,9 +66,7 @@ class Login extends Component{
         .then(resJson => 
            TokenService.saveAuthToken(resJson))
         .then(
-           () => this.setState({
-                loggedIn: !this.state.loggedIn
-            })
+           () => this.props.getState()
         )
         .then(() => this.props.history.push('/home'))    
         .catch(err => {

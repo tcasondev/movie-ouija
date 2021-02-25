@@ -26,10 +26,9 @@ class App extends Component {
 
   
 
-  getState = (newState) => {
+  getState = () => {
     this.setState({
-      email: newState.email,
-      name: newState.name,
+      
       isLoggedIn: true
     })
     console.log(this.state)
@@ -43,7 +42,7 @@ class App extends Component {
       <UserContextProvider>
         <NavBar />
         <Route exact path='/' component={Landing} />
-        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/login' render={(renderProps) => <LoginPage {...renderProps} getState={this.getState} />} />
         <Route exact path='/my-list' component={MovieList}/>
         <Route exact path='/about' component={AboutPage} />
         <Route exact path='/ouija' component={OuijaPage} />
