@@ -43,11 +43,12 @@ class Login extends Component{
     }
 
     handleSubmitLogin(e){
-        
+        e.preventDefault()
         fetch('https://movie-ouija.herokuapp.com/user/login', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'data-type': 'json'
             },
             body: JSON.stringify({
                email: `${this.state.email}`,
