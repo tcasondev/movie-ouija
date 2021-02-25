@@ -1,0 +1,42 @@
+.ouijaArea{
+    cursor: '../Assets/planchette.png', auto;
+}
+
+
+.ouijaForm{
+
+}
+
+.genreSelect{
+    border-radius: 25px;
+
+}
+
+button{
+    border-radius: 25px;
+}
+
+@media all and (max-width: 600px){
+
+    .OuijaArea{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+       
+    }
+
+    .imgArea{
+       display: flex; 
+       justify-content: center; 
+    }
+    
+    img{
+        display: flex;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+        justify-content: center;
+        width: 300px;
+    }
+}

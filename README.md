@@ -1,0 +1,1 @@
+This app was created as the first capstone project for Thinkful's engineering immersion program. 

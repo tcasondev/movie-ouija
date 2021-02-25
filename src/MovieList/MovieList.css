@@ -1,0 +1,10 @@
+.movieList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.movieInput{
+    border-radius: 25px;
+}
