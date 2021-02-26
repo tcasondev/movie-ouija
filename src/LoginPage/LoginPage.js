@@ -35,12 +35,7 @@ class Login extends Component{
         }))
     }
 
-    sendState = (e) => {
-        e.preventDefault();
-        const email= this.state.email;
-        const name= this.state.name;
-        this.context.updateUser(email, name)
-    }
+    
 
     handleSubmitLogin(e){
         e.preventDefault()

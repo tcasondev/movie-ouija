@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 //import './assets/css/fonts.css';
 
 import NavBar from './NavBar/NavBar'
-import {Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Landing from './Landing/Landing'
 import LoginPage from './LoginPage/LoginPage'
 import MovieList from './MovieList/MovieList'
@@ -31,11 +31,9 @@ class App extends Component {
       
       isLoggedIn: true
     })
-    console.log(this.state)
   }
 
   render(){
-    console.log(TokenService.hasAuthToken())
     var loggedIn = TokenService.hasAuthToken()
   return (
     <main>

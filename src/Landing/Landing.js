@@ -17,19 +17,13 @@ export default class Landing extends Component{
         this.handleSubmitNewUser = this.handleSubmitNewUser.bind(this);
     }
 
-    checker= (e) =>{
-        e.preventDefault()
-        console.log(this.state)
-    }
 
     handleEmailChange = (e) => {
-        //e.preventDefault()
         const target = e.target;
         const value = target.value;
         this.setState(state => ({
             email: value
         }))
-        console.log(this.state.email)
     }
 
     handleNameChange = (e) => {
@@ -48,15 +42,6 @@ export default class Landing extends Component{
         this.setState(state => ({
             password: value
         }))
-    }
-
-    
-
-    sendState = (e) => {
-        e.preventDefault();
-        const email= this.state.email;
-        const name= this.state.name;
-        this.context.updateUser(email, name)
     }
 
     handleSubmitNewUser(e){
@@ -87,8 +72,6 @@ export default class Landing extends Component{
         .catch(err => {
             alert(err + ' Creation failed. Does the user already exist?')
         })
-       console.log('creating', this.state)
-       return <Redirect to='/login' />
     }
 
     render(){

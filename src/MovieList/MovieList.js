@@ -28,7 +28,7 @@ export default class MovieList extends Component{
         })
         .then(result => result.json())
         .then(resultJson => 
-            {console.log(resultJson) 
+            { 
             this.setState(state => ({
                 movieList: resultJson
             }))
@@ -77,7 +77,6 @@ export default class MovieList extends Component{
                 movieList: [...this.state.movieList, resultJson]
             })
         })
-        //.then(this.getMovies())
         .then(this.renderMovies())
         }
 
@@ -105,7 +104,6 @@ export default class MovieList extends Component{
     }
 
     render(){
-        console.log(this.state)
         if(!TokenService.hasAuthToken()){
             return(
                 <div>

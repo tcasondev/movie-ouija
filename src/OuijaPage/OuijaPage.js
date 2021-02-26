@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars */
-import {Route, Link} from 'react-router-dom'
-import Landing from '../Landing/Landing';
 import MovieObject from '../MovieObject/MovieObject'
 import { Component } from "react";
 import { UserContext } from '../UserContext';
-import UserContextProvider from '../UserContext';
+
 import TokenService from '../services/token-service';
 import ouijaLoading from '../Assets/ouijaLoading.gif';
 import './OuijaPage.css';
@@ -32,7 +30,7 @@ export default class OuijaPage extends Component{
         })
         .then(result => result.json())
         .then(resultJson => 
-            {console.log(resultJson) 
+            { 
             this.setState(state => ({
                 movieList: resultJson
             }))
@@ -66,13 +64,11 @@ export default class OuijaPage extends Component{
                 searching: true,
                 chosenMovie: movie
             })
-            console.log(movie)
         } else {
             this.setState({
                 searching: true,
                 chosenMovie: filterMovie
             })
-            console.log(filterMovie)
         }
     }
 
@@ -95,7 +91,6 @@ export default class OuijaPage extends Component{
     }
 
     render(){
-        console.log(this.context.isLoggedIn)
         if(TokenService.hasAuthToken() && this.state.ouija === false && this.state.searching === false){
             
             return(
@@ -104,6 +99,7 @@ export default class OuijaPage extends Component{
                     <div className='ouijaForm'>
                         
                         <p>If you'd like you may ask the spirits for a specific genre, though this is not required</p>
+                        <p>If you're new here, this app selects solely from the list of movies that you provide. Feel free to pop over to 'My List' and add away!</p>
                         <select className='genreSelect' onChange={this.handleChangeGenre}>
                             <option value='none'>Genre</option>
                             <option>Action</option>
@@ -184,12 +180,5 @@ export default class OuijaPage extends Component{
             )
         }
 
-        // else {
-        //     return(
-                
-        //         <Landing />
-            
-        //     )
-        // }
     }
 }
