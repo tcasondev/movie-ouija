@@ -19,7 +19,7 @@ export default class OuijaPage extends Component{
         this.componentWillMount = this.componentWillMount.bind(this)
         this.setMovie = this.setMovie.bind(this)
     }
-
+//Populate local storage to be filtered and manipulated
     getMovies(){
         fetch('https://movie-ouija.herokuapp.com/movies', {
             method: 'GET',
@@ -42,7 +42,7 @@ export default class OuijaPage extends Component{
         this.getMovies();
         
     }
-    
+//Triggers the end of the animation    
     setMovie(){
         setTimeout(function() {
             this.setState({
@@ -51,7 +51,7 @@ export default class OuijaPage extends Component{
             })
         }.bind(this), 3000);
     }
-
+//Pulls a random movie from local storage with or without a filter
     getRandomMovie(){
         let length = this.state.movieList.length;
         let genre = this.state.genre;

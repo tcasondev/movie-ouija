@@ -17,7 +17,7 @@ export default class MovieList extends Component{
         this.componentWillMount = this.componentWillMount.bind(this)
         this.toggleUpdate = this.toggleUpdate.bind(this)
     }
-
+//Gets current movie list.
     getMovies(){
         fetch('https://movie-ouija.herokuapp.com/movies', {
             method: 'GET',
@@ -56,7 +56,7 @@ export default class MovieList extends Component{
             genre: value
         }))
     }
-
+//Add movie relation to DB and add movie to state to be rendered.
     handleSubmitNewMovie = (e) => {
         e.preventDefault()
         fetch('https://movie-ouija.herokuapp.com/movies/add', {
@@ -88,7 +88,7 @@ export default class MovieList extends Component{
         
     }
 
-
+//Renders movieObject component for each movie in list
     renderMovies = () => {
         return (
             this.state.movieList.map(movie => 

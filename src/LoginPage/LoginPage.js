@@ -36,7 +36,7 @@ class Login extends Component{
     }
 
     
-
+//API call for login. Returns JWT which is stored in local storage. 
     handleSubmitLogin(e){
         e.preventDefault()
         fetch('https://movie-ouija.herokuapp.com/user/login', {

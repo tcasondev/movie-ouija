@@ -3,7 +3,7 @@ import './MovieObject.css'
 import TokenService from '../services/token-service';
 
 export default class MovieObject extends Component {
-
+//API call to delete movie
     handleDeleteMovie = (id) => {
         //e.preventDefault()
         fetch('https://movie-ouija.herokuapp.com/movies/delete', {
@@ -23,7 +23,7 @@ export default class MovieObject extends Component {
         }
 
     render(){
-        
+       //Movie objects rendered with or without delete button 
         const title = this.props.title;
         const genre = this.props.genre;
         const movie_id = this.props.id

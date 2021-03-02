@@ -43,7 +43,7 @@ export default class Landing extends Component{
             password: value
         }))
     }
-
+//API call happens here
     handleSubmitNewUser(e){
         e.preventDefault()
          fetch('https://movie-ouija.herokuapp.com/user/create', {
@@ -80,6 +80,9 @@ export default class Landing extends Component{
             <div className='aboutPage'>
                 <h1>Landing Page</h1>
                 <p>Call on the spirits to determine your fate. What shall you watch tonight?</p>
+                <p>If you would like to preview the app without creating an account, feel free to login with the following credentials:</p>
+                <p>email: 'example@email.com'</p>
+                <p>password: 'bigbaddummy'</p>
                 <form onSubmit={this.handleSubmitNewUser}>
                 <p>If you're new here, use this form to create an account.</p>
                 <input id='createEmail' name='email' placeholder='Email Address' onChange={this.handleEmailChange} required />
