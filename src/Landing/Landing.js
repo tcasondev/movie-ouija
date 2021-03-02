@@ -1,6 +1,5 @@
 import { Component } from "react";
 import './Landing.css'
-import {Redirect} from 'react-router-dom';
 import { UserContext } from "../UserContext";
 
 
