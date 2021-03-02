@@ -1,14 +1,13 @@
-import React from 'react';
-import OuijaPage from './OuijaPage';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import React from "react";
+import OuijaPage from "./OuijaPage";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Account Component', () => {
-
-    it('component', () => {
-        const accountComponent = shallow(<OuijaPage />);
-        expect(accountComponent).toMatchSnapshot();
-    });
+describe("Account Component", () => {
+  it("component", () => {
+    const accountComponent = shallow(<OuijaPage />);
+    expect(accountComponent).toMatchSnapshot();
+  });
 });
